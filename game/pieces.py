@@ -25,54 +25,34 @@ PIECE_NAMES_TR = {
 
 
 PIECE_SYMBOLS = {
-    "white": {
-        "king": "♔",
-        "wazir": "V",
-        "ferz": "G",
-        "giraffe": "Z",
-        "talia": "T",
-        "knight": "A",
-        "rook": "K",
-        "alfil": "F",
-        "camel": "D",
-        "dabbaba": "M",
+    "king": "👑",
+    "wazir": "🛡️",
+    "ferz": "⚔️",
+    "giraffe": "🦒",
+    "talia": "📐",
+    "knight": "🐴",
+    "rook": "🏰",
+    "alfil": "🐘",
+    "camel": "🐫",
+    "dabbaba": "⚙️",
 
-        "pawn_pawn": "p",
-        "pawn_dabbaba": "m",
-        "pawn_camel": "d",
-        "pawn_alfil": "f",
-        "pawn_ferz": "g",
-        "pawn_king": "ş",
-        "pawn_wazir": "v",
-        "pawn_giraffe": "z",
-        "pawn_talia": "t",
-        "pawn_knight": "a",
-        "pawn_rook": "k",
-    },
-    "black": {
-        "king": "♚",
-        "wazir": "v",
-        "ferz": "g",
-        "giraffe": "z",
-        "talia": "t",
-        "knight": "a",
-        "rook": "k",
-        "alfil": "f",
-        "camel": "d",
-        "dabbaba": "m",
+    "pawn_pawn": "♟️",
+    "pawn_dabbaba": "♟️⚙️",
+    "pawn_camel": "♟️🐫",
+    "pawn_alfil": "♟️🐘",
+    "pawn_ferz": "♟️⚔️",
+    "pawn_king": "♟️👑",
+    "pawn_wazir": "♟️🛡️",
+    "pawn_giraffe": "♟️🦒",
+    "pawn_talia": "♟️📐",
+    "pawn_knight": "♟️🐴",
+    "pawn_rook": "♟️🏰",
+}
 
-        "pawn_pawn": "P",
-        "pawn_dabbaba": "M",
-        "pawn_camel": "D",
-        "pawn_alfil": "F",
-        "pawn_ferz": "G",
-        "pawn_king": "Ş",
-        "pawn_wazir": "V",
-        "pawn_giraffe": "Z",
-        "pawn_talia": "T",
-        "pawn_knight": "A",
-        "pawn_rook": "K",
-    }
+
+COLOR_MARKS = {
+    "white": "⚪",
+    "black": "⚫",
 }
 
 
@@ -90,4 +70,7 @@ def piece_symbol(piece):
     piece_type = piece["type"]
     color = piece["color"]
 
-    return PIECE_SYMBOLS[color].get(piece_type, "?")
+    color_mark = COLOR_MARKS.get(color, "")
+    symbol = PIECE_SYMBOLS.get(piece_type, "?")
+
+    return f"{color_mark} {symbol}"
